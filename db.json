@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "email": "ren@gmail.com",
+      "password": "$2a$10$an1mZoMrbT/CNVXn9J3zieto4QeL6LTGYcAYxOd3pPXD0hvXMZ3SK",
+      "name": "ren",
+      "id": 1
+    },
+    {
+      "email": "marga@gmail.com",
+      "password": "$2a$10$If7RCe0XLt900mal3CwdgOHJv6vnJciJ383bdfeFah5qWhTptUkNq",
+      "name": "marga",
+      "id": 2
+    }
+  ],
+  "cart": [],
+  "errors": [],
+  "questions": [
+    {
+      "_id": "63f371bff0d37853f6b47b79",
+      "question": "Which of the following are true about Node.js? (Select all that apply)",
+      "correctAns": [
+        "It is a JavaScript runtime environment",
+        "It uses an event-driven, non-blocking I/O model",
+        "It is used for building server-side applications"
+      ],
+      "incorrectAns": [
+        "It is only compatible with Windows operating systems"
+      ],
+      "mark": 40
+    },
+    {
+      "_id": "63f3346e62340a248889e37f",
+      "question": "Which of the following are commonly used tools in frontend development?",
+      "correctAns": [
+        "ReactJS",
+        "VueJS"
+      ],
+      "incorrectAns": [
+        "NodeJS",
+        "Go"
+      ],
+      "mark": 40
+    },
+    {
+      "_id": "63f334cd62340a248889e381",
+      "question": "Which of the following are true about ReactJS? (Select two)",
+      "correctAns": [
+        "It uses a virtual DOM to improve performance",
+        "It is used for building user interfaces"
+      ],
+      "incorrectAns": [
+        "It is a server-side rendering framework",
+        "It was developed by Google"
+      ],
+      "mark": 40
+    },
+    {
+      "_id": "63f3353a62340a248889e383",
+      "question": "What is ReactJS used for?",
+      "correctAns": [
+        "Building user interfaces"
+      ],
+      "incorrectAns": [
+        "Building complex backend systems",
+        "Managing databases",
+        "Creating native mobile apps"
+      ],
+      "mark": 40
+    },
+    {
+      "_id": "63f3358662340a248889e385",
+      "question": "What is Redux used for?",
+      "correctAns": [
+        "Managing state in JavaScript applications"
+      ],
+      "incorrectAns": [
+        "Building user interfaces",
+        "Handling authentication in web applications",
+        "Creating server-side APIs"
+      ],
+      "mark": 40
+    },
+    {
+      "_id": "63f336aa62340a248889e387",
+      "question": "Which of the following are true about Node.js? (Select all that apply)",
+      "correctAns": [
+        "It is a JavaScript runtime environment",
+        "It uses an event-driven, non-blocking I/O model",
+        "It is used for building server-side applications"
+      ],
+      "incorrectAns": [
+        "It is only compatible with Windows operating systems"
+      ],
+      "mark": 40
+    }
+  ]
+}
