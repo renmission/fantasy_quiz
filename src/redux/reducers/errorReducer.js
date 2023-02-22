@@ -6,7 +6,7 @@ export default (state = errorInitialState, { type, payload, meta }) => {
   if (!match) return state;
 
   const [, actionType, actionName] = match;
-  if (actionName === 'FAIL') {
+  if (actionName === "FAIL") {
     return [
       ...state,
       {
@@ -17,6 +17,6 @@ export default (state = errorInitialState, { type, payload, meta }) => {
     ];
   }
   return state.filter(
-    x => !(x.action === actionType && x.loadingId === meta.loadingId),
+    (x) => !(x.action === actionType && x.loadingId === meta.loadingId)
   );
 };

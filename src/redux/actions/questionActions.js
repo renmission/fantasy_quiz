@@ -6,7 +6,7 @@ export const loadQuestions = () => async dispatch => {
   await ApiRequest({
     apiData: {
       method: 'get',
-      url: '660/questions',
+      url: 'questions',
     },
     type,
     dispatch,

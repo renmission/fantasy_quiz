@@ -1,11 +1,9 @@
-import ActionTypes from "../constants/action-types";
+export const resultInitialState = [];
 
-export const resultsInitialValue = [];
-
-export default (state = resultsInitialValue, { type, payload }) => {
+export default (state = resultInitialState, { type, payload }) => {
   switch (type) {
-    case ActionTypes.LOAD_RESULTS_SUCCESS:
-      return payload;
+    case "POST_RESULTS_SUCCESS":
+      return [payload];
 
     default:
       return state;

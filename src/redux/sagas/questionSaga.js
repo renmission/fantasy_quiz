@@ -1,11 +1,27 @@
-import { all, fork, takeEvery } from "redux-saga/effects";
-import ActionTypes from "../constants/action-types";
-import apiGenerator from "../../utils/apiGenerator";
+import { all, fork, takeLatest, call, put } from "redux-saga/effects";
+import axiosInstance from "../../utils/axiosInstance";
 
-function* loadQuestionRequest() {
-    yield takeEvery(ActionTypes.LOAD_QUESTIONS_REQUEST,  apiGenerator);
+function* getQuestions() {
+  try {
+    const res = yield call(axiosInstance, {
+      method: "GET",
+      url: "questions",
+      // url: "660/questions",
+    });
+
+    yield put({
+      type: "LOAD_QUESTION_SUCCESS",
+      payload: res,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function* allQuestionsRequest() {
+  yield takeLatest("LOAD_QUESTION_REQUEST", getQuestions);
 }
 
 export default function* rootQuestionSaga() {
-    yield all([fork(loadQuestionRequest)])
+  yield all([fork(allQuestionsRequest)]);
 }

@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
 function Select({
   field, // { name, value, onChange, onBlur }
@@ -11,29 +10,36 @@ function Select({
   ...props
 }) {
   return (
-    <div>
-      <select
-        id={props.id}
-        {...field}
-        {...props}
-        className={clsx(
-          'relative block w-full appearance-none rounded-none  border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm text-gray-500',
-          {
-            [className || '']: !!className,
-          },
+    <div className="-space-y-px rounded-md shadow-sm">
+      <div>
+        <label htmlFor={props.id} className="sr-only">
+          {props.placeholder}
+        </label>
+        <select
+          id={props.id}
+          className={clsx(
+            "relative block w-full appearance-none rounded-none  border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm",
+            {
+              [className || ""]: !!className,
+            }
+          )}
+          {...field}
+          {...props}
+        >
+          <option value="">{props.placeholder}</option>
+          {options.map((x) => (
+            <option key={x.value} value={x.value}>
+              {x.text}
+            </option>
+          ))}
+        </select>
+        {touched[field.name] && errors[field.name] && (
+          <p className="text-red-500 text-sm font-medium">
+            {errors[field.name]}
+          </p>
         )}
-      >
-        {options.map(option => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      {touched[field.name] && errors[field.name] && (
-        <p className="text-red-500 text-sm font-medium">{errors[field.name]}</p>
-      )}
+      </div>
     </div>
   );
 }
-
 export default Select;

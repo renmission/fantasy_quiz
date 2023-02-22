@@ -6,7 +6,7 @@ export default (state = loadingInitialState, { type, meta }) => {
   if (!match) return state;
 
   const [, actionType, actionName] = match;
-  if (actionName === 'REQUEST') {
+  if (actionName === "REQUEST") {
     return [
       ...state,
       {
@@ -17,6 +17,6 @@ export default (state = loadingInitialState, { type, meta }) => {
   }
 
   return state.filter(
-    x => !(x.action === actionType && x.loadingId === meta.loadingId),
+    (x) => !(x.action === actionType && x.loadingId === meta.loadingId)
   );
 };

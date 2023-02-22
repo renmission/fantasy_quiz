@@ -1,18 +1,13 @@
-import { combineReducers } from 'redux';
-import user from './userReducer';
-import loading from './loadingReducer';
-import errors from './errorReducer';
-import cart from './cartReducer';
-import products from './productsReducer';
-import questions from './questionsReducer';
-import results from './resultsReducer';
+import { combineReducers } from "redux";
+import user from "./userReducer";
+import questionReducer from "./questionReducer";
+import resultsReducer from "./resultsReducer";
+// import loading from "./loadingReducer";
+import errors from "./errorReducer";
 
 export default combineReducers({
   user,
-  loading,
+  questionReducer,
+  resultsReducer,
   errors,
-  cart,
-  products,
-  questions,
-  results,
 });
