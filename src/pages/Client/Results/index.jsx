@@ -54,9 +54,9 @@ function Results({ resultsReducer }) {
 
       <a
         href="/dashboard"
-        className="group relative flex w-full justify-center rounded-md border border-transparent bg-[#31CD63] py-2 px-4 text-sm font-medium text-white hover:bg-[#15cf50] focus:outline-none focus:ring-2 focus:ring-[#31CD63] focus:ring-offset-2 disabled:bg-slate-400 disabled:cursor-wait mt-[40px]"
+        className="group relative flex w-full justify-center rounded-md border border-transparent bg-[#31CD63] py-4 px-4 text-sm font-medium text-white hover:bg-[#15cf50] focus:outline-none focus:ring-2 focus:ring-[#31CD63] focus:ring-offset-2 disabled:bg-slate-400 disabled:cursor-wait mt-[40px]"
       >
-        Ok
+        OK
       </a>
     </div>
   );

@@ -21,6 +21,8 @@ function Quiz({ getQuestions, questionReducer }) {
     setAnswer(value);
   };
 
+  
+
   const handleNext = () => {
     if (initialQuestions < questionReducer.length) {
       setInitialQuestions(state => state + 1);
@@ -40,6 +42,9 @@ function Quiz({ getQuestions, questionReducer }) {
   };
 
   console.log('result', resultArray);
+
+  console.log("HERE!!!", questionReducer);
+
 
   useEffect(() => {
     getQuestions();
@@ -65,7 +70,8 @@ function Quiz({ getQuestions, questionReducer }) {
               d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
             />
           </svg>
-          <span className="font-bold text-sx md:text-lg">200</span>
+          <span className="font-bold text-sx md:text-lg">30</span>
+          {questionReducer.some(w => (<span className="font-bold text-sx md:text-lg">{w.weight}</span>))}
         </div>
         <div className="flex flex-row">
           <p className="text-xl font-bold text-gray-900">Fantasy Quiz #156</p>

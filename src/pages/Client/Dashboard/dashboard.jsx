@@ -13,7 +13,7 @@ export default function Dashboard({ user }) {
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <Link
           to="quiz"
-          className="rounded-md bg-green-600 px-6 py-3 text-base font-semibold shadow-lg leading-7 text-white  hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#31CD63] w-[50%]"
+          className="rounded-md bg-[#31CD63] px-6 py-3 text-base font-semibold shadow-lg leading-7 text-white  hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#31CD63] w-[50%]"
         >
           Start Quiz
         </Link>
