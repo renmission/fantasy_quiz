@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { connect, useDispatch } from "react-redux";
-import { FcGraduationCap } from "react-icons/fc";
-import { AiFillCloseCircle } from "react-icons/ai";
-import Questions from "./questions";
-import Results from "../Results";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { connect, useDispatch } from 'react-redux';
+import { GrFormClose } from 'react-icons/gr';
+import Questions from './questions';
+import Results from '../Results';
 
 function Quiz({ getQuestions, questionReducer }) {
   const navigate = useNavigate();
@@ -16,53 +15,65 @@ function Quiz({ getQuestions, questionReducer }) {
   const [viewResult, setViewResult] = useState(false);
   const questionList = questionReducer[initialQuestions];
 
-  console.log("answer", questionReducer);
-  const handleChange = (value) => {
+  console.log('answer', questionReducer);
+  const handleChange = value => {
     console.log(value);
     setAnswer(value);
   };
 
-  const handeNext = () => {
+  const handleNext = () => {
     if (initialQuestions < questionReducer.length) {
-      setInitialQuestions((state) => state + 1);
-      setResultArray((state) => [...state, { id: questionList?.id, answer }]);
+      setInitialQuestions(state => state + 1);
+      setResultArray(state => [...state, { id: questionList?.id, answer }]);
     }
   };
 
   const handleFinish = () => {
     if (initialQuestions < questionReducer.length) {
-      setResultArray((state) => [...state, { id: questionList?.id, answer }]);
-      setViewResult((state) => !state);
+      setResultArray(state => [...state, { id: questionList?.id, answer }]);
+      setViewResult(state => !state);
       dispatch({
-        type: "POST_RESULTS_REQUEST",
+        type: 'POST_RESULTS_REQUEST',
         payload: resultArray,
       });
     }
   };
 
-  console.log("result", resultArray);
+  console.log('result', resultArray);
 
   useEffect(() => {
     getQuestions();
-    handeNext();
+    handleNext();
   }, []);
 
   return (
-    <div className="p-[30px] bg-slate-100 h-screen">
+    <div className="h-screen p-6 overflow-hidden">
       {/*Upper Section  */}
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row items-center">
-          <FcGraduationCap className="text-[50px]" />
+        <div className="flex space-x-1 bg-white mb-2 py-1 px-2 rounded-md items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-4 h-4 bg-blue-900 text-green-500 rounded-full p-1 md:w-6 md:h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
+            />
+          </svg>
+          <span className="font-bold text-sx md:text-lg">200</span>
         </div>
         <div className="flex flex-row">
-          <p className="text-[30px] font-bold text-[#31CD63]">
-            Fantasy Quiz #156
-          </p>
+          <p className="text-xl font-bold text-gray-900">Fantasy Quiz #156</p>
         </div>
         <div className="flex flex-row">
-          <AiFillCloseCircle
-            className="text-[30px] cursor-pointer"
-            onClick={() => navigate("/dashboard")}
+          <GrFormClose
+            className="text-2xl cursor-pointer bg-white rounded-full shadow-md"
+            onClick={() => navigate('/dashboard')}
           />
         </div>
       </div>
@@ -76,7 +87,7 @@ function Quiz({ getQuestions, questionReducer }) {
           initialQuestions={initialQuestions}
           questionReducer={questionReducer}
           handleChange={handleChange}
-          handeNext={handeNext}
+          handleNext={handleNext}
           handleFinish={handleFinish}
         />
       )}
@@ -88,10 +99,10 @@ const mapStateToProps = ({ questionReducer }) => ({
   questionReducer,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   getQuestions: () =>
     dispatch({
-      type: "LOAD_QUESTION_REQUEST",
+      type: 'LOAD_QUESTION_REQUEST',
     }),
 });
 

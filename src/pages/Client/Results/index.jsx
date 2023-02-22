@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { FcMoneyTransfer, FcApproval, FcDiploma2 } from "react-icons/fc";
+import { FcMoneyTransfer, FcApproval } from "react-icons/fc";
+import { GiDiploma } from "react-icons/gi";
 
 function Results({ resultsReducer }) {
   const [resultData, setResultData] = useState();
@@ -25,10 +26,10 @@ function Results({ resultsReducer }) {
   }, [resultsReducer]);
 
   return (
-    <div className="p-[30px] bg-slate-100 h-screen">
+    <div className="p-[30px] h-screen">
       <div className="mt-[40px] text-center">
         <div className="text-center">
-          <FcDiploma2 className="text-[200px] text-center mx-auto" />
+          <GiDiploma className="text-[200px] text-center mx-auto text-green-600" />
         </div>
         <p className="font-bold text-[20px] mt-[20px]">
           Results of Fantasy Quiz #156
@@ -51,12 +52,12 @@ function Results({ resultsReducer }) {
         </div>
       </div>
 
-      <button
-        type="button"
+      <a
+        href="/dashboard"
         className="group relative flex w-full justify-center rounded-md border border-transparent bg-[#31CD63] py-2 px-4 text-sm font-medium text-white hover:bg-[#15cf50] focus:outline-none focus:ring-2 focus:ring-[#31CD63] focus:ring-offset-2 disabled:bg-slate-400 disabled:cursor-wait mt-[40px]"
       >
-        Back
-      </button>
+        Ok
+      </a>
     </div>
   );
 }

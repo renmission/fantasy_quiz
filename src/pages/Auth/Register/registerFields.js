@@ -18,33 +18,33 @@ export const registerFields = [
       return "";
     },
   },
-  {
-    component: Select,
-    name: "gender",
-    id: "gender",
-    "data-value": "",
-    placeholder: "Gender",
-    options: [
-      {
-        value: "male",
-        text: "Male",
-      },
-      {
-        value: "female",
-        text: "Female",
-      },
-      {
-        value: "other",
-        text: "Other",
-      },
-    ],
-    validate: (value) => {
-      if (!value) {
-        return "Required...";
-      }
-      return "";
-    },
-  },
+  // {
+  //   component: Select,
+  //   name: "gender",
+  //   id: "gender",
+  //   "data-value": "",
+  //   placeholder: "Gender",
+  //   options: [
+  //     {
+  //       value: "male",
+  //       text: "Male",
+  //     },
+  //     {
+  //       value: "female",
+  //       text: "Female",
+  //     },
+  //     {
+  //       value: "other",
+  //       text: "Other",
+  //     },
+  //   ],
+  //   validate: (value) => {
+  //     if (!value) {
+  //       return "Required...";
+  //     }
+  //     return "";
+  //   },
+  // },
   //   {
   //     component: Checkbox,
   //     label: "hobbies",

@@ -15,10 +15,10 @@ function BaseLayout() {
   }, [dispatch]);
 
   return (
-    <div className='h-screen bg-orange-50'>
+    <>
       <Outlet />
       <Errors />
-    </div>
+    </>
   );
 }
 
