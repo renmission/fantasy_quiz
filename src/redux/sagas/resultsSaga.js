@@ -5,7 +5,7 @@ function* postResults({ payload }) {
   try {
     const res = yield call(axiosInstance, {
       method: "POST",
-      url: "/answers/results",
+      url: "/results",
       data: payload,
     });
 

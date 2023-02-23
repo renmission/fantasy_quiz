@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { GrFormClose } from 'react-icons/gr';
-import Questions from './questions';
+// import Questions from './questions';
 import Results from '../Results';
+import Questions from '../../../components/Question';
 
 function Quiz({ getQuestions, questionReducer }) {
   const navigate = useNavigate();
